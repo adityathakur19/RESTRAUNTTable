@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Table = require('../models/table'); // adjust path as needed
+const Table = require('./table'); // adjust path as needed
 
 // Get all tables
 router.get('/tables', async (req, res) => {
