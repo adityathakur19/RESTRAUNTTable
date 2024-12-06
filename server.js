@@ -30,16 +30,10 @@ mongoose
   .catch((err) => console.error('MongoDB connection error:', err));
 
 // Routes
-app.use('/api/products', require('./routes/productRoutes'));
-app.use('/api/auth', require('./routes/userRoutes'));
-app.use('/api/expenses', require('./routes/expenseRoutes'));
-app.use('/api/tables', require('./routes/tableRoute'));
 
-// JWT Authentication Middleware (for example, to protect your routes)
-const authMiddleware = require('./middleware/authMiddleware');
+app.use('/api/tables', require('./tableRoute'));
 
-// Protected route example
-app.use('/api/user', authMiddleware, require('./routes/userProfileRoutes'));  // Ensure the user is authenticated before accessing profile routes
+
 
 // 404 Error handler for undefined routes
 app.use((req, res, next) => {
